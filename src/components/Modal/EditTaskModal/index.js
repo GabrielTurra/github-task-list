@@ -14,6 +14,7 @@ import Input from '../../Input';
 import { Container } from '../styles';
 
 const EditTaskModal = ({ isOpen, onRequestClose, actionForm }) => {  
+    const session = useSelector(state => state.session);
     const dispatch = useDispatch();
 
     const tasks = useSelector(state => state.tasks);
@@ -49,7 +50,7 @@ const EditTaskModal = ({ isOpen, onRequestClose, actionForm }) => {
 
             data.id = actionForm;
 
-            dispatch(editTask(data));
+            dispatch(editTask({...data, idUser: session[0].email}));
 
             onRequestClose();
 
