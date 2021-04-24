@@ -49,7 +49,10 @@ $ git clone https://github.com/GabrielTurra/github-task-list.git
 # Acesse a pasta do projeto no terminal/cmd
 $ cd github-task-list
 
-# Inicia o Next, automaticamente baixa todas as dependências
+#Baixe as dependências do projeto no
+$ yarn
+
+# Inicia a aplicação, 
 $ yarn start
 
 # O servidor inciará na porta:3000 - acesse http://localhost:3000
