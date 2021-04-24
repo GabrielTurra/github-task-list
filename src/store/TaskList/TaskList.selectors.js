@@ -1,0 +1,1 @@
+export const selectTaskById = (state, taskID) => state.find(task => task.id === taskID);
