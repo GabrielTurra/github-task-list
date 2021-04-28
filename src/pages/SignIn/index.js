@@ -25,7 +25,7 @@ const SignIn = () => {
             formRef.current.setErrors({});
 
             const schema = Yup.object().shape({
-                email: Yup.string().required('E-mail required') .email('Invalid e-mail!'),
+                email: Yup.string().required('E-mail required').email('Invalid e-mail!'),
                 password: Yup.string().required('Password required!'),
             });
 
@@ -33,24 +33,22 @@ const SignIn = () => {
                 abortEarly: false,
             });
 
-            const myUser = users.find((user) => user.email === data.email && user.password === data.password);
+            const myUser = users.find((user) => user.email.toLowerCase() === data.email.toLowerCase() && user.password === data.password);
 
             if(!myUser){
-                throw new Yup.ValidationError.inner({
-                    email: 'Check your credentials',
-                });
+                throw new Yup.ValidationError(
+                    'Verify your credentials',
+                    { personalError: true }, 
+                    ['email', 'password']       
+                );
             }
-
-            console.log(myUser)
 
             dispatch(createSession(myUser));
 
         }catch (err) {
             if (err instanceof Yup.ValidationError) {
                 const errors = getValidationErrors(err);
-                console.log(errors)
                 formRef.current.setErrors(errors);
-                console.log(errors)
 
                 return;
             }
