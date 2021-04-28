@@ -54,7 +54,6 @@ const SignUpForm = () => {
                         'Email Already Exists',
                         function(email) {  
                             const emailExists = users.find(user => user.email === email)
-                            console.log(emailExists, 'finded email')
                             if (emailExists) {
                                 return false;
                             }

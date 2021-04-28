@@ -18,7 +18,6 @@ const TaskList = () => {
     const tasks = useSelector(state => state.tasks);
     const userTasks = tasks.filter((task) => task.idUser === session[0].email);
 
-    console.log(userTasks, 'my taskjs');
     const dispatch = useDispatch();
 
     // Add Task Modal
@@ -62,7 +61,6 @@ const TaskList = () => {
     }
 
     const handleFinishTask = useCallback((id) => {
-        console.log(id)
         const confirm = window.confirm('You want to complete this task?');
         if(!confirm) return;
     
@@ -70,7 +68,6 @@ const TaskList = () => {
     }, []);
 
     const handleDeleteTask = useCallback((id) => {
-        console.log(id)
         const confirm = window.confirm('You want to delete this task?');
         if(!confirm) return;
     

@@ -12,11 +12,7 @@ import { Container } from '../styles';
 const ViewTaskModal = ({ isOpen, onRequestClose, actionForm }) => {    
     const tasks = useSelector(state => state.tasks);
 
-    console.log(tasks, 'id da task');
-
     const myTask = tasks.find((task) => task.id === actionForm);
-
-    console.log(actionForm, 'actionForm')
 
     const formRef = useRef(null);
 
