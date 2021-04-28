@@ -33,7 +33,7 @@ const EditTaskModal = ({ isOpen, onRequestClose, actionForm }) => {
             setHandleDelivery(myTask.delivery);
             setHandleConclusion(myTask.conclusion);
         }
-    }, [actionForm]);
+    }, [actionForm, myTask]);
 
     const handleSubmit = async (data) => {
         try {

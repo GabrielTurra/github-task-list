@@ -1,8 +1,6 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Modal from 'react-modal';
 import { FiX } from 'react-icons/fi';
-
-import * as Yup from 'yup';
 
 import { useSelector } from 'react-redux';
 

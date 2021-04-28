@@ -1,6 +1,6 @@
 import { uuid } from 'uuidv4';
 
-export default function (state = [], action){
+function userRegisterReducer (state = [], action){
     switch(action.type){
         case 'registerUser': 
             return [
@@ -15,3 +15,5 @@ export default function (state = [], action){
             return state
     }
 }
+
+export default userRegisterReducer;

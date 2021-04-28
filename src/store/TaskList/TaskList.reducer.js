@@ -1,7 +1,7 @@
 import { uuid } from 'uuidv4';
 import { format } from 'date-fns';
 
-export default function (state = [], action){
+function tasklistReducer (state = [], action){
     switch(action.type){
         case 'addTask': 
             return [
@@ -57,3 +57,6 @@ export default function (state = [], action){
             return state;
     }
 }
+
+
+export default tasklistReducer

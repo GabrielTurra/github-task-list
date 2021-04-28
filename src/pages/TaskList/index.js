@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -60,19 +60,19 @@ const TaskList = () => {
         setIsModalViewOpen(false);
     }
 
-    const handleFinishTask = useCallback((id) => {
+    const handleFinishTask = (id) => {
         const confirm = window.confirm('You want to complete this task?');
         if(!confirm) return;
     
         return dispatch(finishTask(id));
-    }, []);
+    };
 
-    const handleDeleteTask = useCallback((id) => {
+    const handleDeleteTask = (id) => {
         const confirm = window.confirm('You want to delete this task?');
         if(!confirm) return;
     
         return dispatch(deleteTask(id));
-    }, []);
+    };
     return (
         <>
             <AddTaskModal 
@@ -109,7 +109,7 @@ const TaskList = () => {
                             </thead>
                             <tbody>
                                 {userTasks.map((task) => (
-                                    <tr key={task.id} className={task.checked && 'checked'}>
+                                    <tr key={task.id} className={task.checked ? 'checked' : ""}>
                                         <td>{task.title}</td>
                                         <td>{task.delivery}</td>
                                         <td>{task.conclusion ||  '--/--/--'}</td>

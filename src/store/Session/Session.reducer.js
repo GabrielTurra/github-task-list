@@ -1,4 +1,4 @@
-export default function (state = [], action){
+function sessionReducer  (state = [], action){
     switch(action.type){
         case 'createSession': 
             return [
@@ -14,3 +14,5 @@ export default function (state = [], action){
             return state
     }
 }
+
+export default sessionReducer
