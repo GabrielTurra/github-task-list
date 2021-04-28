@@ -5,16 +5,20 @@
 </div>
 <img src="./.github/screen_4.gif">
 
-
-
 <h1 id="about">Git Hub Tasklist Challenge</h1>
 
 <p>📌 Este projeto tem o intuito realizar uma Tasklist, onde cada usuário visualiza as suas tarefas criadas e pode manipulá-las como quiser. O projeto foi construido utilizando Redux e Redux Persist<p>
 
 <p align="center">
+ <a href="#preview">Preview</a> •
  <a href="#technologies">Tecnologias</a> •
  <a href="#installation">Como usar</a>
 </p>
+
+<h2 align="left" id="preview">💻 Preview </h2>
+
+<p>Clique na imagem abaixo e acesse uma prévia da aplicação diretamente na hospedagem da Vercel</p>
+<a target="_blank" href="https://github-task-list.vercel.app"><img src="./.github/logo_github.jpg" /></a>
 
 <h2 align="left" id="technologies">📐 Tecnologias </h2>
 
